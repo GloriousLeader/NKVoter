@@ -39,9 +39,9 @@ public final class BasicListener extends VoteWorkerListener {
     @Override
     public void onVote(VoteReturnStatus returnStatus, VoteWorker worker) {
         if(returnStatus.equals(VoteReturnStatus.SUCCESS)) {
-            System.out.println("[worker_id=" + worker.getId() + ", status=" + returnStatus + ", vote_total=" + ++totalCount + "] Successfully voted");
+            System.out.println("[worker_id=" + worker.getId() + ", candidate= " + worker.getCand() +  ", status=" + returnStatus + ", vote_total=" + ++totalCount + "] Successfully voted");
         } else {
-            System.out.println("[worker_id=" + worker.getId() + ", status=" + returnStatus + "] Vote failed to vote");
+            System.out.println("[worker_id=" + worker.getId() + ", candidate= " + worker.getCand() + ", status=" + returnStatus + "] Vote failed to vote");
             worker.setRunning(false);
         }
     }

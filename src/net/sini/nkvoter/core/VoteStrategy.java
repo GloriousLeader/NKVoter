@@ -38,4 +38,5 @@ public abstract class VoteStrategy {
      */
     public abstract VoteReturnStatus vote(SocketFactory socketFactory) throws Exception;
 
+    public abstract String getCand();
 }

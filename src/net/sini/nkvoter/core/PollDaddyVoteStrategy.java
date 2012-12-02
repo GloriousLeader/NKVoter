@@ -48,12 +48,12 @@ public final class PollDaddyVoteStrategy extends VoteStrategy {
     /**
      * The target to get the vote id. 
      */
-    private String VOTE_ID_TARGET = "/n/113df4577acffec0e03c79cfc7210eb6/6685610?";
+    private String VOTE_ID_TARGET;
     
     /**
      * The target to use to vote.
      */
-    private String VOTE_TARGET = "/vote-js.php?p=6685610&b=1&a=30279773&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129192%2C00.html&n=";
+    private String VOTE_TARGET;
     
     /**
      * The cookies to use when getting the vote id. Note: Haven't tested most of these for use yet.
@@ -83,11 +83,14 @@ public final class PollDaddyVoteStrategy extends VoteStrategy {
      */
     private long timestamp;
     
+    private String candName;
+    
     /**
      * Constructs a new {@link PollDaddyVoteStrategy};
      */
-    public PollDaddyVoteStrategy(String voteIDTarget, String voteTarget)
+    public PollDaddyVoteStrategy(String candName, String voteIDTarget, String voteTarget)
     {
+        this.candName = candName;
         this.VOTE_ID_TARGET = voteIDTarget;
         this.VOTE_TARGET = voteTarget;
     }
@@ -162,6 +165,12 @@ public final class PollDaddyVoteStrategy extends VoteStrategy {
         }
         
         return id;
+    }
+    
+    @Override
+    public String getCand()
+    {
+        return this.candName;
     }
     
     /**

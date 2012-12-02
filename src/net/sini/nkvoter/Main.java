@@ -30,6 +30,7 @@ import net.sini.nkvoter.core.PollDaddyVoteStrategyFactory;
 import net.sini.nkvoter.core.VoteDispatcher;
 import net.sini.nkvoter.core.VoteEngine;
 import net.sini.nkvoter.core.listeners.BasicListener;
+import net.sini.nkvoter.io.SocketFactory;
 import net.sini.nkvoter.io.impl.NormalSocketFactory;
 import net.sini.nkvoter.io.impl.ProxySocketFactory;
 import net.sini.nkvoter.io.impl.TorSocketFactory;
@@ -56,6 +57,11 @@ public final class Main {
      * The version of NKVoter.
      */
     private static final Version VERSION = new Version(1, 1, 0);
+    
+    private static VoteEngine engine;
+    private static  PollDaddyVoteStrategyFactory strategyFactory;
+    private static TaskManager taskManager;
+    private static BasicListener listener;
     
     /**
      * The main entry point of the program.
@@ -91,29 +97,23 @@ public final class Main {
         }
         
         
-        PollDaddyVoteStrategyFactory strategyFactory = new PollDaddyVoteStrategyFactory();
-        VoteEngine engine = NKVoter.getSingleton().getEngine();
-        TaskManager taskManager = NKVoter.getSingleton().getTaskManager();
-        BasicListener listener = new BasicListener();
+        strategyFactory = new PollDaddyVoteStrategyFactory();
+        engine = NKVoter.getSingleton().getEngine();
+        taskManager = NKVoter.getSingleton().getTaskManager();
+        listener = new BasicListener();
         
         if(useTor) {
             TorSocketFactory socketFactory = new TorSocketFactory();
             VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory.createStrategy("KJU"));
-            engine.add("TOR", dispatcher);
             
-            DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, MAXIMUM_VOTES);
-            task.addWorkerListener(listener);
-            taskManager.submit(task);
+            setupDispatchTasks("TOR", socketFactory);
         }
 
         if(useNormal) {
             NormalSocketFactory socketFactory = new NormalSocketFactory();
             VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory.createStrategy("KJU"));
-            engine.add("NORMAL", dispatcher);
-
-            DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, MAXIMUM_VOTES);
-            task.addWorkerListener(listener);
-            taskManager.submit(task);
+            
+            setupDispatchTasks("NORMAL", socketFactory);
         }
         
         if(useProxy)
@@ -163,15 +163,26 @@ public final class Main {
                 InetSocketAddress iSock = new InetSocketAddress(InetAddress.getByAddress(ipbytes), portNum);
                 ProxySocketFactory socketFactory = new ProxySocketFactory(iSock);
 
-                VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory.createStrategy("KJU"));
-                engine.add("PROXY", dispatcher);
-
-                DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, MAXIMUM_VOTES);
-                task.addWorkerListener(listener);
-                taskManager.submit(task);
+                setupDispatchTasks("PROXY", socketFactory);
             }
         }
         
         taskManager.submit(new PulseEngineTask(DELAY_BETWEEN_DUMPS, engine));
+    }
+    
+    private static void setupDispatchTasks(String dispatcher_type, SocketFactory sockf)
+    {
+        String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle"};
+        int[] votesPerCandidate = {50, 45, 40, 35, 30};
+        
+        for(int i = 0; i < candidates.length; ++i)
+        {
+            VoteDispatcher dispatcher = new VoteDispatcher(sockf, strategyFactory.createStrategy(candidates[i]));
+            engine.add(dispatcher_type, dispatcher);
+
+            DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, votesPerCandidate[i]);
+            task.addWorkerListener(listener);
+            taskManager.submit(task);
+        }
     }
 }

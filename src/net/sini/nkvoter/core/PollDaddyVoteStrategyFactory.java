@@ -39,15 +39,6 @@ public final class PollDaddyVoteStrategyFactory extends VoteStrategyFactory {
         initCandidates();
     }
     
-    private void initCandidates()
-    {
-        String[] KJU_strings = new String[2];
-        KJU_strings[0] = "/n/113df4577acffec0e03c79cfc7210eb6/6685610?";
-        KJU_strings[1] = "/vote-js.php?p=6685610&b=1&a=30279773&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129192%2C00.html&n=";
-        candidates.put("KJU", KJU_strings);
-        
-    }
-    
     @Override
     public VoteStrategy createStrategy()
     {
@@ -55,6 +46,39 @@ public final class PollDaddyVoteStrategyFactory extends VoteStrategyFactory {
     }
     public VoteStrategy createStrategy(String candID) {
         String[] relevantStrings = candidates.get(candID);
-        return new PollDaddyVoteStrategy(relevantStrings[0], relevantStrings[1]);
+        return new PollDaddyVoteStrategy(relevantStrings[0], relevantStrings[1], relevantStrings[2]);
+    }
+    
+    private void initCandidates()
+    {
+        String[] KJU_strings = new String[3];
+        KJU_strings[0] = "Our Glorious Leader";
+        KJU_strings[1] = "/n/113df4577acffec0e03c79cfc7210eb6/6685610?";
+        KJU_strings[2] = "/vote-js.php?p=6685610&b=1&a=30279773&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129192%2C00.html&n=";
+        candidates.put("KJU", KJU_strings);
+        
+        String[] Jon_strings = new String[3];
+        Jon_strings[0] = "Jon";
+        Jon_strings[1] = "/n/6b1aa0c281ebbeec4419dbcdb76a7da0/6685709?";
+        Jon_strings[2] = "/vote-js.php?p=6685709&b=1&a=30280231&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129211%2C00.html&n=";
+        candidates.put("Jon", Jon_strings);
+        
+        String[] Undoc_strings = new String[3];
+        Undoc_strings[0] = "Undocumented";
+        Undoc_strings[1] = "/n/e1386f1d203929ebe8c0202ab9b529bf/6685607?";
+        Undoc_strings[2] = "/vote-js.php?p=6685607&b=1&a=30279757,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129191%2C00.html&n=";
+        candidates.put("Undoc", Undoc_strings);
+        
+        String[] Stephen_strings = new String[3];
+        Stephen_strings[0] = "Stephen";
+        Stephen_strings[1] = "/n/45a54d304efd9783196e1db13da69194/6685714?";
+        Stephen_strings[2] = "/vote-js.php?p=6685714&b=1&a=30280243,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129212%2C00.html&n=";
+        candidates.put("Stephen", Stephen_strings);
+        
+        String[] Gabrielle_strings = new String[3];
+        Gabrielle_strings[0] = "Gabrielle";
+        Gabrielle_strings[1] = "/n/77beeeb2bb776cc255eb4e3fac1cb624/6685689?";
+        Gabrielle_strings[2] = "/vote-js.php?p=6685689&b=1&a=30280171,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129203%2C00.html&n";
+        candidates.put("Gabrielle", Gabrielle_strings);
     }
 }

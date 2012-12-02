@@ -57,6 +57,8 @@ public final class VoteWorker implements Runnable {
      */
     private boolean isRunning;
     
+    private String cand;
+    
     /**
      * Constructs a new {@link VoteWorker};
      * 
@@ -64,6 +66,7 @@ public final class VoteWorker implements Runnable {
      */
     public VoteWorker(VoteRequest request) {
         this.request = request;
+        this.cand = request.getVoteStrategy().getCand();
         isRunning = true;
     }
 
@@ -118,5 +121,10 @@ public final class VoteWorker implements Runnable {
      */
     public int getId() {
         return id;
+    }
+    
+    public String getCand()
+    {
+        return this.cand;
     }
 }
