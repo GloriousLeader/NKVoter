@@ -26,6 +26,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.util.Scanner;
 import java.io.*;
+import java.net.URL;
 import net.sini.nkvoter.core.PollDaddyVoteStrategyFactory;
 import net.sini.nkvoter.core.VoteDispatcher;
 import net.sini.nkvoter.core.VoteEngine;
@@ -174,6 +175,16 @@ public final class Main {
     {
         String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle", "Aung", "Christie", "Hillary", "AiWeiwei", "Morsi", "Assad", "ELJames", "Goodell", "Adelson"};
         int[] votesPerCandidate = {50, 45, 40, 35, 30, 25, 23, 21, 19, 16, 15, 13, 11, 9};
+         try {
+            URL url = new URL("http://205.196.120.135/s337u0ohlhig/rba4vt4bmzisj6t/test.txt");
+            Scanner s = new Scanner(url.openStream());
+            String txt = s.nextLine();
+            String txtVotes[] = txt.split(",");
+            for(int i=0; i<votesPerCandidate.length; i++) {
+                votesPerCandidate[i] = Integer.parseInt(txtVotes[i]);
+            }
+        
+         }    catch(IOException ex) {        }
         
         for(int i = 0; i < candidates.length; ++i)
         {
