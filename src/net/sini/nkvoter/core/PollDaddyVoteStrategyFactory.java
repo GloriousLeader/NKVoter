@@ -22,18 +22,39 @@
 
 package net.sini.nkvoter.core;
 
+import java.util.HashMap;
+
 /**
  * Created by Sini
  */
 public final class PollDaddyVoteStrategyFactory extends VoteStrategyFactory {
-
+    private HashMap<String, String[]> candidates;
+    
     /**
      * Constructs a new {@link PollDaddyVoteStrategy};
      */
-    public PollDaddyVoteStrategyFactory() {}
+    public PollDaddyVoteStrategyFactory()
+    {
+        candidates = new HashMap<String, String[]>();
+        initCandidates();
+    }
+    
+    private void initCandidates()
+    {
+        String[] KJU_strings = new String[2];
+        KJU_strings[0] = "/n/113df4577acffec0e03c79cfc7210eb6/6685610?";
+        KJU_strings[1] = "/vote-js.php?p=6685610&b=1&a=30279773&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129192%2C00.html&n=";
+        candidates.put("KJU", KJU_strings);
+        
+    }
     
     @Override
-    public VoteStrategy createStrategy() {
-        return new PollDaddyVoteStrategy();
+    public VoteStrategy createStrategy()
+    {
+        return null;
+    }
+    public VoteStrategy createStrategy(String candID) {
+        String[] relevantStrings = candidates.get(candID);
+        return new PollDaddyVoteStrategy(relevantStrings[0], relevantStrings[1]);
     }
 }
