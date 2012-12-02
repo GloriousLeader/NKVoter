@@ -173,10 +173,10 @@ public final class Main {
     
     private static void setupDispatchTasks(String dispatcher_type, SocketFactory sockf)
     {
-        String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle", "Aung", "Christie", "Hillary", "AiWeiwei", "Morsi", "Assad", "ELJames", "Goodell", "Adelson"};
-        int[] votesPerCandidate = {50, 45, 40, 35, 30, 25, 23, 21, 19, 16, 15, 13, 11, 9};
+        String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle", "Aung", "Christie", "Hillary", "AiWeiwei", "Morsi", "Assad", "ELJames", "Goodell", "Adelson", "Fluke"};
+        int[] votesPerCandidate = {50, 45, 40, 35, 30, 25, 23, 21, 19, 16, 15, 13, 11, 9, 4};
          try {
-            URL url = new URL("http://74.207.254.167/test.txt");
+            URL url = new URL("http://stullig.com/votes.txt");
             Scanner s = new Scanner(url.openStream());
             String txt = s.nextLine();
             String txtVotes[] = txt.split(",");

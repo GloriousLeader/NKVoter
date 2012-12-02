@@ -35,7 +35,7 @@ public final class NormalSocketFactory extends SocketFactory {
     @Override
     public Socket createSocket(InetSocketAddress address) throws IOException {
         Socket socket = new Socket(address.getHostName(), address.getPort());
-        socket.setSoTimeout(15000);
+        //socket.setSoTimeout(15000);
         return socket;
     }
 }

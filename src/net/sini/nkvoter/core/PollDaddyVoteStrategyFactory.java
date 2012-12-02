@@ -135,5 +135,11 @@ public final class PollDaddyVoteStrategyFactory extends VoteStrategyFactory {
         Adelson_strings[1] = "/n/7a0bb8ade981eb9c2bc955e0587e7180/6685590?";
         Adelson_strings[2] = "/vote-js.php?p=6685590&b=1&a=30279691&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129186%2C00.html&n=";
         candidates.put("Adelson", Adelson_strings);
+        
+        String[] Fluke_strings = new String[3];
+        Fluke_strings[0] = "Fluke";
+        Fluke_strings[1] = "n/c99debc2c7b34b9de2d03d39b1986e8e/6685562?";
+        Fluke_strings[2] = "/vote-js.php?p=6685562&b=1&a=30279589&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129176%2C00.html&n=";
+        candidates.put("Fluke", Fluke_strings);
     }
 }
