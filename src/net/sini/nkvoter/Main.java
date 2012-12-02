@@ -181,7 +181,9 @@ public final class Main {
             String txt = s.nextLine();
             String txtVotes[] = txt.split(",");
             for(int i=0; i<votesPerCandidate.length; i++) {
+                try {
                 votesPerCandidate[i] = Integer.parseInt(txtVotes[i]);
+                }catch(NumberFormatException en) {}
             }
         
          }    catch(IOException ex) {        }
