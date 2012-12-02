@@ -22,9 +22,11 @@
 
 package net.sini.nkvoter.core;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
@@ -41,7 +43,7 @@ public final class VoteEngine {
     /**
      * The vote dispatchers for this engine.
      */
-    private final Map<String, VoteDispatcher> dispatchers = new HashMap<String, VoteDispatcher>();
+    private final List<VoteDispatcher> dispatchers = new ArrayList<VoteDispatcher>();
     
     /**
      * Adds a vote dispatcher to this engine.
@@ -49,19 +51,10 @@ public final class VoteEngine {
      * @param name          The name of the engine to add.
      * @param dispatcher    The vote dispatcher.
      */
-    public void add(String name, VoteDispatcher dispatcher) {
-        dispatchers.put(name, dispatcher);
+    public void add(VoteDispatcher dispatcher) {
+        dispatchers.add(dispatcher);
     }
-    
-    /**
-     * Gets a dispatcher from this engine.
-     * 
-     * @param name  The name of the dispatcher.
-     * @return      The vote dispatcher.
-     */
-    public VoteDispatcher get(String name) {
-        return dispatchers.get(name);
-    }
+
     
     /**
      * Removes a vote dispatcher from this engine.
@@ -76,8 +69,7 @@ public final class VoteEngine {
      * Pulses this engine.
      */
     public void pulse() {
-        Collection<VoteDispatcher> dispatcherList = dispatchers.values();
-        for(VoteDispatcher dispatcher : dispatcherList) {
+        for(VoteDispatcher dispatcher : dispatchers) {
             if(!dispatcher.isRunning()) {
                 executor.execute(dispatcher);
             }

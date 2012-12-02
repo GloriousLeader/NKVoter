@@ -78,7 +78,7 @@ public final class PollDaddyVoteStrategyFactory extends VoteStrategyFactory {
         String[] Gabrielle_strings = new String[3];
         Gabrielle_strings[0] = "Gabrielle";
         Gabrielle_strings[1] = "/n/77beeeb2bb776cc255eb4e3fac1cb624/6685689?";
-        Gabrielle_strings[2] = "/vote-js.php?p=6685689&b=1&a=30280171,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129203%2C00.html&n";
+        Gabrielle_strings[2] = "/vote-js.php?p=6685689&b=1&a=30280171,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129203%2C00.html&n=";
         candidates.put("Gabrielle", Gabrielle_strings);
     }
 }

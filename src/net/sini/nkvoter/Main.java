@@ -178,7 +178,7 @@ public final class Main {
         for(int i = 0; i < candidates.length; ++i)
         {
             VoteDispatcher dispatcher = new VoteDispatcher(sockf, strategyFactory.createStrategy(candidates[i]));
-            engine.add(dispatcher_type, dispatcher);
+            engine.add(dispatcher);
 
             DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, votesPerCandidate[i]);
             task.addWorkerListener(listener);
