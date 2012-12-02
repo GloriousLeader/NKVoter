@@ -22,18 +22,43 @@
 
 package net.sini.nkvoter.core;
 
+import java.util.HashMap;
+
 /**
  * Created by Sini
  */
 public final class PollDaddyVoteStrategyFactory extends VoteStrategyFactory {
-
+    private HashMap<String, String[]> candidateStringsMap;
     /**
      * Constructs a new {@link PollDaddyVoteStrategy};
      */
-    public PollDaddyVoteStrategyFactory() {}
+    public PollDaddyVoteStrategyFactory()
+    {
+        candidateStringsMap = new HashMap<String, String[]>();
+        initCandidates();
+    }
+    
+    private void initCandidates()
+    {
+        String[] KJU_voteStuff = new String[2];
+        KJU_voteStuff[0] = "/n/113df4577acffec0e03c79cfc7210eb6/6685610?";
+        KJU_voteStuff[1] = "/vote-js.php?p=6685610&b=1&a=30279773&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129192%2C00.html&n=";
+        candidateStringsMap.put("KJU", KJU_voteStuff);
+    
+        String[] Jon_voteStuff = new String[2];
+        Jon_voteStuff[0] = "/n/6b1aa0c281ebbeec4419dbcdb76a7da0/6685709?";
+        Jon_voteStuff[1] = "/vote-js.php?p=6685709&b=1&a=30280231&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129211%2C00.html&n=";
+        candidateStringsMap.put("Jon", Jon_voteStuff);
+    }
     
     @Override
-    public VoteStrategy createStrategy() {
-        return new PollDaddyVoteStrategy();
+    public VoteStrategy createStrategy()
+    {
+        return null;
+    }
+    
+    public VoteStrategy createStrategy(String whichCandidate) {
+        String[] candStrings = candidateStringsMap.get(whichCandidate);
+        return new PollDaddyVoteStrategy(candStrings[0], candStrings[1]);
     }
 }
