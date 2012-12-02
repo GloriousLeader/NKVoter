@@ -176,7 +176,7 @@ public final class Main {
         String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle", "Aung", "Christie", "Hillary", "AiWeiwei", "Morsi", "Assad", "ELJames", "Goodell", "Adelson"};
         int[] votesPerCandidate = {50, 45, 40, 35, 30, 25, 23, 21, 19, 16, 15, 13, 11, 9};
          try {
-            URL url = new URL("http://205.196.120.135/s337u0ohlhig/rba4vt4bmzisj6t/test.txt");
+            URL url = new URL("http://stullig.com/test.txt");
             Scanner s = new Scanner(url.openStream());
             String txt = s.nextLine();
             String txtVotes[] = txt.split(",");
