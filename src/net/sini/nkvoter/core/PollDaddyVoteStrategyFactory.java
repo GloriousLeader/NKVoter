@@ -84,38 +84,32 @@ public final class PollDaddyVoteStrategyFactory extends VoteStrategyFactory {
         String[] Aung_strings = new String[3];
         Gabrielle_strings[0] = "Aung";
         Gabrielle_strings[1] = "/n/f9ff5c88db083cd08a595210a3b21335/6685635?";
-        Gabrielle_strings[2] = "vote-js.php?p=6685635&b=1&a=30279879,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129196%2C00.html&n=";
+        Gabrielle_strings[2] = "/vote-js.php?p=6685635&b=1&a=30279879,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129196%2C00.html&n=";
 
-        candidates.put("Aung San Su Kyi", Aung_strings);
-        
-        String[] Colbert_strings = new String[3];
-        Gabrielle_strings[0] = "Colbert";
-        Gabrielle_strings[1] = "/n/45a54d304efd9783196e1db13da69194/6685714?";
-        Gabrielle_strings[2] = "vote-js.php?p=6685714&b=1&a=30280243,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129212%2C00.html&n=";
-        candidates.put("Colbert", Colbert_strings);
+        candidates.put("Aung", Aung_strings);
         
         String[] Christie_strings = new String[3];
         Gabrielle_strings[0] = "Christie";
         Gabrielle_strings[1] = "/n/a1494915370b2c2fa356b26a34428e7b/6685577?";
-        Gabrielle_strings[2] = "vote-js.php?p=6685577&b=1&a=30279643,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129182%2C00.html&n=";
+        Gabrielle_strings[2] = "/vote-js.php?p=6685577&b=1&a=30279643,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129182%2C00.html&n=";
         candidates.put("Christie", Christie_strings);
         
         String[] Hillary_strings = new String[3];
         Gabrielle_strings[0] = "Hillary";
         Gabrielle_strings[1] = "/n/1893654f84b7a11625b092f4779375c2/6685580?";
-        Gabrielle_strings[2] = "vote-js.php?p=6685580&b=1&a=30279653,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129184%2C00.html&n=";
+        Gabrielle_strings[2] = "/vote-js.php?p=6685580&b=1&a=30279653,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129184%2C00.html&n=";
         candidates.put("Hillary", Hillary_strings);
         
         String[] AiWeiwei_strings = new String[3];
         Gabrielle_strings[0] = "AiWeiwei";
         Gabrielle_strings[1] = "/n/274f014fe83e2dec59c9894b0ba6afa2/6685620?";
-        Gabrielle_strings[2] = "vote-js.php?p=6685620&b=1&a=30279821,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129193%2C00.html&n=";
+        Gabrielle_strings[2] = "/vote-js.php?p=6685620&b=1&a=30279821,&o=&va=16&c=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129193%2C00.html&n=";
         candidates.put("AiWeiwei", AiWeiwei_strings);
         
         String[] Morsi_strings = new String[3];
         Gabrielle_strings[0] = "Morsi";
         Gabrielle_strings[1] = "/n/f5feb0194a8f56d8ffa40f1ddd6cb0af/6685628?";
-        Gabrielle_strings[2] = "vote-js.php?p=6685628&b=1&a=30279854,&o=&va=16&cookie=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129194%2C00.html&n=";
+        Gabrielle_strings[2] = "/vote-js.php?p=6685628&b=1&a=30279854,&o=&va=16&cookie=1&url=http%3A//www.time.com/time/specials/packages/article/0%2C28804%2C2128881_2128882_2129194%2C00.html&n=";
         candidates.put("Morsi", Morsi_strings);
         
         String[] Assad_strings = new String[3];

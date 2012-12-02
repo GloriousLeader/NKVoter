@@ -172,8 +172,8 @@ public final class Main {
     
     private static void setupDispatchTasks(String dispatcher_type, SocketFactory sockf)
     {
-        String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle"};
-        int[] votesPerCandidate = {50, 45, 40, 35, 30};
+        String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle", "Aung", "Christie", "Hillary", "AiWeiwei", "Morsi", "Assad", "ELJames", "Goodell", "Adelson"};
+        int[] votesPerCandidate = {50, 45, 40, 35, 30, 25, 23, 21, 19, 16, 15, 13, 11, 9};
         
         for(int i = 0; i < candidates.length; ++i)
         {
