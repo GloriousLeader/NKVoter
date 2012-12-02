@@ -60,9 +60,9 @@ public final class VoteDispatcher implements Runnable {
     private final SocketFactory socketFactory;
     
     /**
-     * The strategy for this vote dispatcher.
+     * The strategy factory for this vote dispatcher.
      */
-    private final VoteStrategy strategy;
+    private final VoteStrategyFactory strategyFactory;
     
     /**
      * The flag for if this dispatcher is running.
@@ -75,9 +75,9 @@ public final class VoteDispatcher implements Runnable {
      * @param socketFactory     The socket factory to use when submitting requests.
      * @param strategyFactory   The strategy factory to use when submitting requests.
      */
-    public VoteDispatcher(SocketFactory socketFactory, VoteStrategy strategy) {
+    public VoteDispatcher(SocketFactory socketFactory, VoteStrategyFactory strategyFactory) {
         this.socketFactory = socketFactory;
-        this.strategy = strategy;
+        this.strategyFactory = strategyFactory;
     }
     
     /**
@@ -95,7 +95,7 @@ public final class VoteDispatcher implements Runnable {
             }
             amountVotes -= votes;
             
-            VoteRequest request = new VoteRequest(socketFactory, strategy, votes);
+            VoteRequest request = new VoteRequest(socketFactory, strategyFactory.createStrategy(), votes);
             VoteWorker worker = voteWorkers[i] = new VoteWorker(request);
             workers.add(worker);
         }

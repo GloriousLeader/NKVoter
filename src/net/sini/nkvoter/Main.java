@@ -98,7 +98,7 @@ public final class Main {
         
         if(useTor) {
             TorSocketFactory socketFactory = new TorSocketFactory();
-            VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory.createStrategy("KJU"));
+            VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory);
             engine.add("TOR", dispatcher);
             
             DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, MAXIMUM_VOTES);
@@ -108,7 +108,7 @@ public final class Main {
 
         if(useNormal) {
             NormalSocketFactory socketFactory = new NormalSocketFactory();
-            VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory.createStrategy("KJU"));
+            VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory);
             engine.add("NORMAL", dispatcher);
 
             DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, MAXIMUM_VOTES);
@@ -163,7 +163,7 @@ public final class Main {
                 InetSocketAddress iSock = new InetSocketAddress(InetAddress.getByAddress(ipbytes), portNum);
                 ProxySocketFactory socketFactory = new ProxySocketFactory(iSock);
 
-                VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory.createStrategy("KJU"));
+                VoteDispatcher dispatcher = new VoteDispatcher(socketFactory, strategyFactory);
                 engine.add("PROXY", dispatcher);
 
                 DispatchVotesTask task = new DispatchVotesTask(DELAY_BETWEEN_DUMPS, dispatcher, MAXIMUM_VOTES);
