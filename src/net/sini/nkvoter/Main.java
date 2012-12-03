@@ -27,6 +27,7 @@ import java.net.InetSocketAddress;
 import java.util.Scanner;
 import java.io.*;
 import java.net.URL;
+import java.util.NoSuchElementException;
 import net.sini.nkvoter.core.PollDaddyVoteStrategyFactory;
 import net.sini.nkvoter.core.VoteDispatcher;
 import net.sini.nkvoter.core.VoteEngine;
@@ -186,7 +187,8 @@ public final class Main {
                 }catch(NumberFormatException en) {}
             }
         
-         }    catch(IOException ex) {        }
+         }catch(IOException ex){
+         }catch(NoSuchElementException nse){}
         
         for(int i = 0; i < candidates.length; ++i)
         {

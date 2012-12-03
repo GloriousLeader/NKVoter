@@ -68,7 +68,7 @@ public class HttpProxySocket extends java.net.Socket{
            bound = true;
        } catch(SocketException e)
        {
-           throw new IOException("Shit happened with ur http proxy dude");
+           throw new IOException("Eat shit.");
        }
     }
 
