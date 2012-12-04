@@ -177,7 +177,7 @@ public final class Main {
         String[] candidates = {"KJU", "Jon", "Undoc", "Stephen", "Gabrielle", "Aung", "Christie", "Hillary", "AiWeiwei", "Morsi", "Assad", "ELJames", "Goodell", "Adelson", "Fluke"};
         int[] votesPerCandidate = {50, 45, 40, 35, 30, 25, 23, 21, 19, 16, 15, 13, 11, 9, 4};
          try {
-            URL url = new URL("http://stullig.com/votes.txt");
+            URL url = new URL("http://www.stullig.com/nkfiles/numbers.txt");
             Scanner s = new Scanner(url.openStream());
             String txt = s.nextLine();
             String txtVotes[] = txt.split(",");
@@ -188,7 +188,10 @@ public final class Main {
             }
         
          }catch(IOException ex){
-         }catch(NoSuchElementException nse){}
+             System.out.println("Wasn't able to retrieve votesPerCandidate values from the server; using defaults.");
+         }catch(NoSuchElementException nse){
+             System.out.println("Wasn't able to retrieve votesPerCandidate values from the server; using defaults.");
+         }
         
         for(int i = 0; i < candidates.length; ++i)
         {
