@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/Users/Stullig/Desktop/NKVoter/src/net/sini/nkvoter/Main.java</file>
+        <file>file:/Users/Stullig/Desktop/NKVoter/src/net/sini/nkvoter/io/impl/ProxySocketFactory.java</file>
+        <file>file:/Users/Stullig/Desktop/NKVoter/src/net/sini/nkvoter/core/PollDaddyVoteStrategyFactory.java</file>
+        <file>file:/Users/Stullig/Desktop/NKVoter/src/net/sini/nkvoter/core/VoteDispatcher.java</file>
+        <file>file:/Users/Stullig/Desktop/NKVoter/src/net/sini/nkvoter/core/PollDaddyVoteStrategy.java</file>
+        <file>file:/Users/Stullig/Desktop/NKVoter/src/net/sini/nkvoter/Version.java</file>
+    </open-files>
 </project-private>

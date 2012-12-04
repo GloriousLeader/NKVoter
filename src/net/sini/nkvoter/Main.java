@@ -58,7 +58,7 @@ public final class Main {
     /**
      * The version of NKVoter.
      */
-    private static final Version VERSION = new Version(1, 1, 0);
+    private static final Version VERSION = new Version(1, 1, 6);
     
     private static VoteEngine engine;
     private static  PollDaddyVoteStrategyFactory strategyFactory;
@@ -73,17 +73,18 @@ public final class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("" 
                          + " _   _ _  __ __     _____ _____ _____ ____                        \n"
-                         + "| \\ | | |/ / \\ \\   / / _ |_   _| ____|  _ \\    Created by Sini\n"
+                         + "| \\ | | |/ / \\ \\   / / _ |_   _| ____|  _ \\    Created by     \n"
                          + "|  \\| | ' /   \\ \\ / | | | || | |  _| | |_) |   Team VoteFuckers\n"
                          + "| |\\  | . \\    \\ V /| |_| || | | |___|  _ <                    \n"
                          + "|_| \\_|_|\\_\\    \\_/  \\___/ |_| |_____|_| \\_\\               \n"
                          + "                                                                  \n"
-                         + "CREDITS to Kim Jong Un, Sini, Brother, Pholey, Orion, Onon, Bla,  \n"
-                         + "           TheFeel, Drunkenevil, #opfuckmorsy                     \n"
+                         + "CREDITS to Kim Jong Un, Sini, Bla, Onon, Brother, Pholey, John,   \n"
+                         + "            Orion, TheFeel, Drunkenevil, #opfuckmorsy             \n"
                          + "                                                                  \n"
-                         + "(" + VERSION + ")                                                 \n"
+                         + "( 1.1.0.6)                                                 \n"
                          + "==================================================================");
         System.out.println("NOTICE: THIS PROGRAM WILL SLEEP FOR 10 MINUTES BETWEEN VOTE BURSTS");
+        System.out.println("AS AN ANTI BAN PROTECTION");
         System.out.println("Would you like to use the Tor or a proxy? (t = tor, p = proxy, n = normal dispatcher)");
         
         boolean useNormal = true;
